@@ -24,9 +24,10 @@ gridNodeList.forEach (div => {
 
 const divNodeList = document.querySelectorAll(".hovering");
 const button = document.createElement("button");
-button.setAttribute("style", "display: flex; justify-content: center; font-size: 30px; border-radius: 30%; background-color: white; margin-bottom: 20px;");
-wrapper.appendChild(container);
+button.setAttribute("style", "align-self: center ; font-size: 20px; border-radius: 20px; background-color: white; margin-bottom: 20px;");
+button.textContent = "Resize the grid";
 wrapper.appendChild(button);
+wrapper.appendChild(container);
 document.body.appendChild(wrapper);
 
 
@@ -37,7 +38,7 @@ button.addEventListener('click',(event)=>{
     }while(userInput>100 || userInput<0);
     container.innerHTML = "";
     let newSquareSize = 400/userInput;
-    for (let i=1; i<userInput*userInput; i++)
+    for (let i=1; i<=userInput*userInput; i++)
     {
         const square = document.createElement("div");
         square.setAttribute("style",`width: ${newSquareSize}px; height: ${newSquareSize}px; background-color: white;`);
@@ -53,4 +54,5 @@ newSquares.forEach(div => {
 });
 
 })
-document.body.appendChild(button);
+wrapper.appendChild(button);
+wrapper.appendChild(container);     
